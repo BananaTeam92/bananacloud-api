@@ -1,0 +1,49 @@
+{
+    "name": "bananacloud-api",
+    "version": "1.0.0",
+    "description": "API Side of BananaCloud mobile app",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "nodemon --experimental-specifier-resolution=node index.js",
+        "lint": "eslint --ext .js .",
+        "format": "prettier --check .",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BananaTeam92/bananacloud-api.git"
+    },
+    "keywords": [
+        "eslint",
+        "prettier",
+        "express",
+        "cloud",
+        "api",
+        "nodejs"
+    ],
+    "bugs": {
+        "url": "https://github.com/BananaTeam92/bananacloud-api/issues"
+    },
+    "homepage": "https://github.com/BananaTeam92/bananacloud-api#readme",
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.2.8"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.17.6",
+        "@babel/core": "^7.17.8",
+        "@babel/node": "^7.16.8",
+        "@babel/preset-env": "^7.16.11",
+        "babel-cli": "^6.26.0",
+        "eslint": "^8.12.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "nodemon": "^2.0.15",
+        "prettier": "^2.6.1"
+    }
+}
