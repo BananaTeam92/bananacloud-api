@@ -28,7 +28,7 @@ export const signIn = (req, res) => {
                 .json({ message: 'Authentication failed. Invalid user or password.' })
         }
         return res.json({
-            token: jwt.sign({ email: user.email, _id: user._id }, process.env.SECRET_KEY),
+            token: jwt.sign({ user }, process.env.SECRET_KEY),
         })
     })
 }
