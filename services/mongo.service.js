@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 // Init MongoDB connection
 export const mongo = async () => {
     mongoose
-        .connect(process.env.MONGODB_DEV, { useNewUrlParser: true })
+        .connect(process.env.DB_URI, { useNewUrlParser: true })
         .then(() => {
             console.log('✅ Database connected success')
         })
