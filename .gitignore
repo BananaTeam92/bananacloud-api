@@ -4,4 +4,3 @@ node_modules/
 # Misc
 .env
 .env.local
-wrangler.toml
