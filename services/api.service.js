@@ -18,7 +18,7 @@ export const api = () => {
     })
 
     // Launch WebServer
-    app.listen(process.env.WEBSERVER_PORT, () => {
-        console.log(`✅ Server launched success on port ${process.env.WEBSERVER_PORT}`)
+    app.listen(process.env.PORT, () => {
+        console.log(`✅ Server launched success on port ${process.env.PORT}`)
     })
 }
