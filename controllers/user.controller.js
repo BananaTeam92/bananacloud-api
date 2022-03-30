@@ -13,8 +13,10 @@ export const register = (req, res) => {
     newUser.save((err, user) => {
         if (err) return res.status(400).send({ message: 'Email déjà enregistrer' })
         else {
-            user.password = undefined
-            return res.json(user)
+            user.password = newUser.password
+            return res.json({ 
+                token: jwt.sign({ user }, process.env.SECRET_KEY), 
+            })
         }
     })
 }
