@@ -1,6 +1,5 @@
 import express from 'express'
 import cors from 'cors'
-
 import routes from '../routes/auth.routes'
 
 export const api = () => {

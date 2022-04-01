@@ -21,7 +21,8 @@ export const register = (req, res) => {
     })
 }
 
-export const signIn = (req, res) => {
+export const login = (req, res) => {
+    console.log(req);
     User.findOne({ email: req.body.email }, (err, user) => {
         if (err) throw err
         if (!user || !bcrypt.compareSync(req.body.password, user.password)) {
