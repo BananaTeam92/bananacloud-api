@@ -22,7 +22,6 @@ export const register = (req, res) => {
 }
 
 export const login = (req, res) => {
-    console.log(req);
     User.findOne({ email: req.body.email }, (err, user) => {
         if (err) throw err
         if (!user || !bcrypt.compareSync(req.body.password, user.password)) {
@@ -39,4 +38,21 @@ export const login = (req, res) => {
 export const loginRequired = (req, res, next) => {
     if (req.user) next()
     else return res.status(401).json({ message: 'Unauthorized user !' })
+}
+
+export const updateUser = (req, res) => {
+    User.findByIdAndUpdate(req.body.id, req.body, {
+        new: true,
+    })
+    .then((data) => {
+        res.status(200).send({
+            message: "User has been modified",
+            user: data,
+        });
+    })
+    .catch((err) => {
+        res.status(500).json({
+            err: err
+        });
+    })
 }

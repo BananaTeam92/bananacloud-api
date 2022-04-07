@@ -10,10 +10,15 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    isPremium: {
+        type: Boolean,
+        required: true
+    },
     createAt: {
         type: Date,
         default: Date.now,
     },
+   
     pictures: [],
 })
 
