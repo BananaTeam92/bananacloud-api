@@ -18,8 +18,6 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-   
-    pictures: [],
 })
 
 export const User = mongoose.model('User', userSchema)

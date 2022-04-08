@@ -56,3 +56,28 @@ export const updateUser = (req, res) => {
         });
     })
 }
+
+export const googleRegister = (req, res) => {
+    let user = {
+        email: req.body.email,
+        password: "google",
+    }
+
+    let newUser = User(user)
+    if (!newUser.password || !newUser.email) {
+        return res.status(400).send({ message: 'Missing email or password' })
+    }
+    newUser.password = bcrypt.hashSync(req.body.password, 10)
+
+    newUser.save((err, user) => {
+        if (err) return res.status(400).send({ message: 'Email déjà enregistrer' })
+        else {
+            user.password = newUser.password
+            return res.json({ 
+                token: jwt.sign({ user }, process.env.SECRET_KEY), 
+            })
+        }
+    })
+    
+
+}
