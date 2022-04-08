@@ -1,4 +1,4 @@
-import { register, login, updateUser } from '../controllers/user.controller'
+import { register, login, updateUser, googleRegister } from '../controllers/user.controller'
 
 const routes = (app) => {
     app.route('/api/auth/register')
@@ -6,7 +6,9 @@ const routes = (app) => {
     app.route('/api/auth/login')
         .post(login)
     app.route('/api/update-user')
-        .post(updateUser);
+        .post(updateUser)
+    app.route('/api/google-register')
+        .post(googleRegister)
 }
 
 export default routes
